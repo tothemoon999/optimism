@@ -58,7 +58,7 @@ var (
 	MaxPendingTransactionsFlag = &cli.Uint64Flag{
 		Name:    "max-pending-tx",
 		Usage:   "The maximum number of pending transactions. 0 for no limit.",
-		Value:   1,
+		Value:   0,
 		EnvVars: prefixEnvVars("MAX_PENDING_TX"),
 	}
 	MaxChannelDurationFlag = &cli.Uint64Flag{
