@@ -232,7 +232,7 @@ func (d *OpGeth) CreatePayloadAttributes(txs ...*types.Transaction) (*eth.Payloa
 	attrs := eth.PayloadAttributes{
 		Timestamp:             timestamp,
 		Transactions:          txBytes,
-		NoTxPool:              true,
+		NoTxPool:              false, // fixed mine
 		GasLimit:              (*eth.Uint64Quantity)(&d.SystemConfig.GasLimit),
 		Withdrawals:           withdrawals,
 		ParentBeaconBlockRoot: parentBeaconBlockRoot,
