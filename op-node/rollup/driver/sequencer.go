@@ -95,7 +95,7 @@ func (d *Sequencer) StartBuildingBlock(ctx context.Context) error {
 
 	// For the Ecotone activation block we shouldn't include any sequencer transactions.
 	if d.rollupCfg.IsEcotoneActivationBlock(uint64(attrs.Timestamp)) {
-		attrs.NoTxPool = true
+		attrs.NoTxPool = false
 		d.log.Info("Sequencing Ecotone upgrade block")
 	}
 
