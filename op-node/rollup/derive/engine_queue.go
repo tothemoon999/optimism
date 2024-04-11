@@ -501,6 +501,7 @@ func (eq *EngineQueue) tryNextUnsafePayload(ctx context.Context) error {
 	eq.log.Info("------------------------------")
 
 	if eq.safeAttributes == nil {
+		eq.log.Info("safeAttributes is nil")
 		return nil
 	}
 	attrs := eq.safeAttributes.attributes
