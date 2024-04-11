@@ -499,6 +499,9 @@ func (eq *EngineQueue) tryNextUnsafePayload(ctx context.Context) error {
 	eq.log.Trace("Executed unsafe payload", "hash", ref.Hash, "number", ref.Number, "timestamp", ref.Time, "l1Origin", ref.L1Origin)
 	eq.logSyncProgress("unsafe payload from sequencer")
 
+	attrs := eq.safeAttributes.attributes
+	eq.log.Trace("Pending Transactions: ", attrs.Transactions)
+
 	return nil
 }
 
